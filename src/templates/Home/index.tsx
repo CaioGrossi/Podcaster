@@ -4,21 +4,7 @@ import Link from "next/link";
 import * as S from "./styles";
 import { usePlayerContext } from "../../contexts/PlayerContext";
 import { convertToTimeString } from "../../utils/convertToTimeString";
-
-export type EpisodeProps = {
-  id: string;
-  title: string;
-  members: string;
-  publishedAt: string;
-  thumbnail: string;
-  description: string;
-  duration: number;
-  url: string;
-  file: {
-    url: string;
-    type: string;
-  };
-};
+import { EpisodeProps } from "../Episode";
 
 export type HomeTemplateProps = {
   latestEpisodes: EpisodeProps[];
@@ -29,7 +15,7 @@ export default function Home({
   allEpisodes,
   latestEpisodes,
 }: HomeTemplateProps) {
-  const { playList } = usePlayerContext();
+  const { playEpisodeList } = usePlayerContext();
 
   const episodeList = [...latestEpisodes, ...allEpisodes];
 
@@ -62,7 +48,7 @@ export default function Home({
 
                 <button
                   type="button"
-                  onClick={() => playList(episodeList, index)}
+                  onClick={() => playEpisodeList(episodeList, index)}
                 >
                   <img src="/play-green.svg" alt="Tocar episodio" />
                 </button>
@@ -111,7 +97,10 @@ export default function Home({
                     <button
                       type="button"
                       onClick={() =>
-                        playList(episodeList, index + latestEpisodes.length)
+                        playEpisodeList(
+                          episodeList,
+                          index + latestEpisodes.length
+                        )
                       }
                     >
                       <img src="/play-green.svg" alt="Tocar episodio" />

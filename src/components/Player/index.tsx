@@ -17,7 +17,6 @@ export default function Player() {
     isPlaying,
     isLooping,
     isShuffling,
-    togglePlay,
     toggleLoop,
     toggleShuffle,
     setIsPlayingState,
@@ -139,7 +138,7 @@ export default function Player() {
           <S.PlayButton
             type="button"
             disabled={!episode}
-            onClick={() => togglePlay()}
+            onClick={() => setIsPlayingState(!isPlaying)}
           >
             {isPlaying ? (
               <img src="/pause.svg" />

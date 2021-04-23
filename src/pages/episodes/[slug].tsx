@@ -4,7 +4,6 @@ import format from "date-fns/format";
 import { parseISO } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 import EpisodeTemplate, { EpisodeTemplateProps } from "../../templates/Episode";
-import { convertToTimeString } from "../../utils/convertToTimeString";
 
 export default function Episode(props: EpisodeTemplateProps) {
   return <EpisodeTemplate {...props} />;

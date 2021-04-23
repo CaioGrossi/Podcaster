@@ -1,16 +1,26 @@
 import Base from "../Base";
-import { EpisodeProps } from "../Home";
 import Image from "next/image";
 import Link from "next/link";
 import { usePlayerContext } from "../../contexts/PlayerContext";
 import * as S from "./styles";
+
+export type EpisodeProps = {
+  id: string;
+  title: string;
+  members: string;
+  publishedAt: string;
+  thumbnail: string;
+  description: string;
+  duration: number;
+  url: string;
+};
 
 export type EpisodeTemplateProps = {
   episode: EpisodeProps;
 };
 
 export default function Episode({ episode }: EpisodeTemplateProps) {
-  const { play } = usePlayerContext();
+  const { playEpisode } = usePlayerContext();
   return (
     <Base>
       <S.Wrapper>
@@ -28,7 +38,7 @@ export default function Episode({ episode }: EpisodeTemplateProps) {
             objectFit="cover"
           />
 
-          <button type="button" onClick={() => play(episode)}>
+          <button type="button" onClick={() => playEpisode(episode)}>
             <img src="/play.svg" alt="Tocar episodio" />
           </button>
         </S.ThumbnailContainer>

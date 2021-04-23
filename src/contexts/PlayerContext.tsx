@@ -1,12 +1,7 @@
 import React, { createContext, useContext, useState } from "react";
+import { EpisodeProps } from "../templates/Episode";
 
-type Episode = {
-  title: string;
-  members: string;
-  thumbnail: string;
-  duration: number;
-  url: string;
-};
+type Episode = Omit<EpisodeProps, "description" | "publishedAt" | "id">;
 
 type PlayerContextData = {
   episodeList: Episode[];
@@ -14,10 +9,9 @@ type PlayerContextData = {
   isPlaying: boolean;
   isLooping: boolean;
   isShuffling: boolean;
-  play: (episode: Episode) => void;
-  togglePlay: () => void;
+  playEpisode: (episode: Episode) => void;
   setIsPlayingState: (state: boolean) => void;
-  playList: (list: Episode[], index: number) => void;
+  playEpisodeList: (list: Episode[], index: number) => void;
   playNext: () => void;
   playPrevious: () => void;
   toggleLoop: () => void;
@@ -38,20 +32,16 @@ export default function PlayerProvider({ children }: PlayerProviderProps) {
   const [isLooping, setIsLooping] = useState(false);
   const [isShuffling, setIsShuffling] = useState(false);
 
-  function play(episode: Episode) {
+  function playEpisode(episode: Episode) {
     setEpisodeList([episode]);
     setCurrentEpisodeIndex(0);
     setIsPlaying(true);
   }
 
-  function playList(list: Episode[], index: number) {
+  function playEpisodeList(list: Episode[], index: number) {
     setEpisodeList(list);
     setCurrentEpisodeIndex(index);
     setIsPlaying(true);
-  }
-
-  function togglePlay() {
-    setIsPlaying(!isPlaying);
   }
 
   function toggleLoop() {
@@ -105,10 +95,9 @@ export default function PlayerProvider({ children }: PlayerProviderProps) {
         isPlaying,
         isLooping,
         isShuffling,
-        play,
-        togglePlay,
+        playEpisode,
         setIsPlayingState,
-        playList,
+        playEpisodeList,
         playNext,
         playPrevious,
         toggleLoop,
