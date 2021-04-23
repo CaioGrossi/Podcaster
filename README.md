@@ -22,7 +22,6 @@ para executar o projeto.
 * Typescript
 * Styled Componetes
 * NextJs
-* 
 
 ## Diferenciais
 * Utitlizado styled componentes para estilização;
