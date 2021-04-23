@@ -7,8 +7,13 @@ export const Wrapper = styled.header`
     display: flex;
     align-items: center;
     padding: 2rem 4rem;
+    width: 100%;
 
     border-bottom: 1px solid ${theme.colors.gray100};
+
+    @media (max-width: 900px) {
+      padding: 2rem;
+    }
   `}
 `;
 

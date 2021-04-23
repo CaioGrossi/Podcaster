@@ -15,6 +15,11 @@ export const Wrapper = styled.div`
       height: 6rem;
       border-radius: 1rem;
     }
+
+    @media (max-width: 900px) {
+      width: 95%;
+      padding: 1rem;
+    }
   `}
 `;
 
@@ -38,6 +43,16 @@ export const PlayButton = styled.button`
 
     &:hover {
       filter: brightness(0.95);
+    }
+
+    @media (max-width: 900px) {
+      width: 2rem;
+      height: 2rem;
+
+      img {
+        width: 1rem;
+        height: 1rem;
+      }
     }
   `}
 `;
@@ -78,6 +93,15 @@ export const EpisodeDetails = styled.div`
       &:last-child {
         margin-left: 0.3rem;
         margin-right: 0;
+      }
+    }
+
+    @media {
+      p {
+        font-size: 0.7rem;
+      }
+      span {
+        font-size: 0.7rem;
       }
     }
   `}

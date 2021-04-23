@@ -27,6 +27,7 @@ export default function Home({
           <div>
             {latestEpisodes.map((episode, index) => (
               <LatestEpisodeCard
+                key={index}
                 {...episode}
                 onPlay={() => playEpisodeList(episodeList, index)}
               />
@@ -53,6 +54,7 @@ export default function Home({
               {allEpisodes.map((episode, index) => (
                 <EpisodeTableRow
                   {...episode}
+                  key={index}
                   onPlay={() =>
                     playEpisodeList(episodeList, index + latestEpisodes.length)
                   }

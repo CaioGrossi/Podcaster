@@ -60,6 +60,8 @@ export default function Player() {
     }
   }, [isPlaying]);
 
+  console.log(episode);
+
   return (
     <S.Wrapper>
       <S.Header>
@@ -102,7 +104,9 @@ export default function Player() {
               <S.EmptySlider></S.EmptySlider>
             )}
           </S.Slider>
-          <span>{convertToTimeString(episode?.duration) || "00:00:00"}</span>
+          <span>
+            {!!episode ? convertToTimeString(episode?.duration) : "00:00:00"}
+          </span>
         </S.Progress>
 
         {!!episode && (

@@ -12,7 +12,7 @@ export default function Base({ children }: BaseTemplateProps) {
     <S.Wrapper>
       <main>
         <Header />
-        <div>{children}</div>
+        {children}
       </main>
 
       <Player />

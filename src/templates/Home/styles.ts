@@ -9,14 +9,27 @@ export const Wrapper = styled.div`
     margin-top: 3rem;
     margin-bottom: 1.5rem;
   }
+
+  @media (max-width: 900px) {
+    padding: 0 1rem;
+    max-width: 95%;
+  }
 `;
 
 export const LatestEpisodes = styled.section`
   > div {
-    list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
+  }
+
+  @media (max-width: 900px) {
+    > div {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 95%;
+    }
   }
 `;
 
