@@ -1,6 +1,6 @@
 # Podcaster
 
-Projeto feito junto a Rocketseat na quinta Next Level Week. O projeto consiste em uma aplicação para ouvir os principais episodios de podacast "Fala DEV". No projeto foi desenvolvido uma lógica completa para um palayer de audio, desde funcionalidade para passar os podcasts até opção para deixar em loop ou embaralhar a atual lista de podcasta que está ouvindo.
+Projeto feito junto a Rocketseat na quinta Next Level Week. O projeto consiste em uma aplicação para ouvir os principais episodios de podacast "Fala DEV". No projeto foi desenvolvido uma lógica completa para um palayer de áudio, desde funcionalidade para passar os podcasts até opção para deixar em loop ou embaralhar a atual lista de podcasta que está ouvindo.Foram explorados muitos contextos da biblioteca React como criação e manipulação de contextos e também do framework NextJS, como geração estáticas de paginas/rotas e por servidor.
 
 
 ## Pré-requisitos
